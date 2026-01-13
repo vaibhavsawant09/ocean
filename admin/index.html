@@ -23,116 +23,224 @@
         .ship-gradient {
             background: linear-gradient(to tr, #020617, #0369a1);
         }
+
+        /* Smooth transition for sidebar */
+        .sidebar-link:hover {
+            background: rgba(14, 165, 233, 0.1);
+            color: #0ea5e9;
+        }
+
+        .sidebar-link.active {
+            background: #0ea5e9;
+            color: white;
+        }
     </style>
 </head>
 
-<body class="pb-24">
+<body class="bg-slate-50">
 
-    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 px-5 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-            <div class="w-8 h-8 ship-gradient rounded-lg flex items-center justify-center">
-                <i data-lucide="anchor" class="text-white w-5 h-5"></i>
+    <aside class="hidden lg:flex fixed left-0 top-0 h-screen w-64 bg-white border-r border-slate-200 flex-col p-6 z-50">
+        <div class="flex items-center gap-3 mb-10">
+            <div class="w-10 h-10 ship-gradient rounded-xl flex items-center justify-center">
+                <i data-lucide="anchor" class="text-white w-6 h-6"></i>
             </div>
 
-            <img src="../assets/imgs/ocean/logo.png" alt="MARITIMA Logo" class="h-8 w-auto object-contain">
+            <img src="../assets/imgs/ocean/logo.png" alt="Maritima Logo" class="h-7 w-auto object-contain">
         </div>
-
-        <i data-lucide="bell" class="w-6 h-6 text-slate-400"></i>
-    </header>
-
-    <main class="max-w-md mx-auto p-4 space-y-6">
-
-        <section>
-            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Fleet Dashboard</h3>
-            <div class="grid grid-cols-2 gap-3">
-                <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
-                    <i data-lucide="ship" class="w-5 h-5 text-sky-600 mb-2"></i>
-                    <p class="text-2xl font-bold">24</p>
-                    <p class="text-[10px] text-slate-500 font-medium">Active Vessels</p>
-                </div>
-                <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
-                    <i data-lucide="users" class="w-5 h-5 text-indigo-600 mb-2"></i>
-                    <p class="text-2xl font-bold">142</p>
-                    <p class="text-[10px] text-slate-500 font-medium">Onboard Crew</p>
-                </div>
+        <nav class="space-y-2 flex-1">
+            <a href="index.html"
+                class="sidebar-link active text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="layout-grid" class="w-5 h-5"></i> Dashboard
+            </a>
+            <a href="jobs.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="briefcase" class="w-5 h-5"></i> Job Postings
+            </a>
+            <a href="blogs.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="newspaper" class="w-5 h-5"></i> Insights
+            </a>
+            <a href="form-applications.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="newspaper" class="w-5 h-5"></i>Applications
+            </a>
+            <a href="profile.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="user" class="w-5 h-5"></i> Admin Profile
+            </a>
+        </nav>
+        <div class="bg-slate-50 rounded-2xl p-4">
+            <p class="text-[10px] font-bold text-slate-400 uppercase mb-2">System Status</p>
+            <div class="flex items-center gap-2">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span class="text-xs font-bold text-slate-700">All Systems Online</span>
             </div>
-        </section>
+        </div>
+    </aside>
 
-        <section>
-            <div class="flex justify-between items-center mb-3">
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Open Vacancies</h3>
-                <span class="text-xs font-bold text-sky-600">Post New</span>
+    <div class="lg:ml-64 transition-all duration-300">
+
+        <header
+            class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2 lg:hidden">
+                <div class="w-8 h-8 ship-gradient rounded-lg flex items-center justify-center">
+                    <i data-lucide="anchor" class="text-white w-5 h-5"></i>
+                </div>
+
+                <img src="../assets/imgs/ocean/logo.png" alt="Maritima" class="h-6 w-auto object-contain">
             </div>
-            <div class="space-y-3">
-                <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center justify-between">
-                    <div>
-                        <p class="text-sm font-bold text-slate-800">Chief Engineer</p>
-                        <p class="text-[10px] text-slate-500">Tanker • 4 Months Contract</p>
+
+            <div class="hidden lg:block relative w-96">
+                <i data-lucide="search" class="absolute left-3 top-2.5 w-4 h-4 text-slate-400"></i>
+                <input type="text" placeholder="Search vessels, jobs, or crew..."
+                    class="w-full bg-slate-100 border-none rounded-xl py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-sky-500">
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="notifications.html"><button class="relative p-2 text-slate-400 hover:text-slate-600">
+                        <i data-lucide="bell" class="w-6 h-6"></i>
+                        <span
+                            class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+                    </button></a>
+                <div class="hidden lg:flex items-center gap-3 pl-4 border-l border-slate-200">
+                    <div class="text-right">
+                        <p class="text-xs font-bold text-slate-800">Capt. R B KESHARI</p>
+                        <p class="text-[10px] text-slate-500">Admin</p>
                     </div>
-                    <span class="bg-green-100 text-green-700 text-[10px] px-2 py-1 rounded-md font-bold">5 Apps</span>
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
+                        class="w-10 h-10 rounded-full bg-slate-100 border">
                 </div>
-                <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-center justify-between">
-                    <div>
-                        <p class="text-sm font-bold text-slate-800">Second Officer</p>
-                        <p class="text-[10px] text-slate-500">Bulk Carrier • Urgent</p>
+            </div>
+        </header>
+
+        <main class="p-6 lg:p-10 space-y-8 max-w-7xl mx-auto">
+
+            <section>
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Fleet Overview</h3>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+                    <div
+                        class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 bg-sky-50 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="ship" class="w-6 h-6 text-sky-600"></i>
+                        </div>
+                        <p class="text-3xl font-bold text-slate-800">24</p>
+                        <p class="text-xs text-slate-500 font-medium">Active Vessels</p>
                     </div>
-                    <span class="bg-amber-100 text-amber-700 text-[10px] px-2 py-1 rounded-md font-bold">2 Apps</span>
+                    <div
+                        class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="users" class="w-6 h-6 text-indigo-600"></i>
+                        </div>
+                        <p class="text-3xl font-bold text-slate-800">142</p>
+                        <p class="text-xs text-slate-500 font-medium">Onboard Crew</p>
+                    </div>
+                    <div
+                        class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="anchor" class="w-6 h-6 text-emerald-600"></i>
+                        </div>
+                        <p class="text-3xl font-bold text-slate-800">08</p>
+                        <p class="text-xs text-slate-500 font-medium">In Port</p>
+                    </div>
+                    <div
+                        class="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center mb-4">
+                            <i data-lucide="alert-triangle" class="w-6 h-6 text-amber-600"></i>
+                        </div>
+                        <p class="text-3xl font-bold text-slate-800">03</p>
+                        <p class="text-xs text-slate-500 font-medium">Cert. Expiring</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section>
-            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">Industry Insights</h3>
-            <div class="flex gap-4 overflow-x-auto no-scrollbar">
-                <div
-                    class="min-w-[200px] bg-slate-800 rounded-2xl h-32 relative overflow-hidden p-4 flex flex-col justify-end">
-                    <img src="https://images.unsplash.com/photo-1524522173746-f628baad3644?auto=format&fit=crop&q=80&w=400"
-                        class="absolute inset-0 opacity-40 object-cover w-full h-full" alt="Ship">
-                    <p class="relative z-10 text-white text-xs font-bold">New Fuel Regulations 2026</p>
-                </div>
-                <div
-                    class="min-w-[200px] bg-sky-900 rounded-2xl h-32 relative overflow-hidden p-4 flex flex-col justify-end">
-                    <img src="https://images.unsplash.com/photo-1454165833767-1393690d560c?auto=format&fit=crop&q=80&w=400"
-                        class="absolute inset-0 opacity-40 object-cover w-full h-full" alt="Port">
-                    <p class="relative z-10 text-white text-xs font-bold">Automation in Major Ports</p>
-                </div>
-            </div>
-        </section>
+            <div class="grid lg:grid-cols-3 gap-8">
 
-    </main>
+                <section class="lg:col-span-2">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Open Vacancies</h3>
+                        <a href="add-jobs.html"><button
+                                class="bg-sky-600 text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-sky-700 transition-all">Post
+                                New</button></a>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div
+                            class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center justify-between hover:border-sky-300 transition-colors cursor-pointer group">
+                            <div>
+                                <p class="text-sm font-bold text-slate-800 group-hover:text-sky-600 transition-colors">
+                                    Chief Engineer</p>
+                                <p class="text-[10px] text-slate-500">Tanker • 4 Months Contract</p>
+                            </div>
+                            <span class="bg-green-100 text-green-700 text-[10px] px-3 py-1.5 rounded-lg font-bold">5
+                                Apps</span>
+                        </div>
+                        <div
+                            class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center justify-between hover:border-sky-300 transition-colors cursor-pointer group">
+                            <div>
+                                <p class="text-sm font-bold text-slate-800 group-hover:text-sky-600 transition-colors">
+                                    Second Officer</p>
+                                <p class="text-[10px] text-slate-500">Bulk Carrier • Urgent</p>
+                            </div>
+                            <span class="bg-amber-100 text-amber-700 text-[10px] px-3 py-1.5 rounded-lg font-bold">2
+                                Apps</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Industry Insights</h3>
+                    <div class="space-y-4">
+                        <div
+                            class="group relative bg-slate-800 rounded-3xl h-44 overflow-hidden p-6 flex flex-col justify-end cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1524522173746-f628baad3644?auto=format&fit=crop&q=80&w=400"
+                                class="absolute inset-0 opacity-40 group-hover:scale-110 transition-transform duration-500 object-cover w-full h-full"
+                                alt="Ship">
+                            <div class="relative z-10">
+                                <span
+                                    class="bg-sky-500 text-[9px] text-white px-2 py-1 rounded mb-2 inline-block font-bold">REGULATION</span>
+                                <p class="text-white text-sm font-bold leading-tight">New Fuel Regulations 2026: What
+                                    you need to know</p>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative bg-sky-900 rounded-3xl h-44 overflow-hidden p-6 flex flex-col justify-end cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1454165833767-1393690d560c?auto=format&fit=crop&q=80&w=400"
+                                class="absolute inset-0 opacity-40 group-hover:scale-110 transition-transform duration-500 object-cover w-full h-full"
+                                alt="Port">
+                            <div class="relative z-10">
+                                <span
+                                    class="bg-emerald-500 text-[9px] text-white px-2 py-1 rounded mb-2 inline-block font-bold">TECH</span>
+                                <p class="text-white text-sm font-bold leading-tight">Automation in Major Ports and ROI
+                                    Analysis</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+    </div>
 
     <nav
-        class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-200 px-6 py-4 flex justify-between items-center z-50">
-
-        <a href="index.html" class="flex flex-col items-center gap-1 text-sky-600 transition-colors">
+        class="lg:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-200 px-6 py-4 flex justify-between items-center z-50">
+        <a href="index.html" class="flex flex-col items-center gap-1 text-sky-600">
             <i data-lucide="layout-grid" class="w-6 h-6"></i>
             <span class="text-[10px] font-bold uppercase">Dash</span>
         </a>
-
-        <a href="jobs.html"
-            class="flex flex-col items-center gap-1 text-slate-400 hover:text-sky-600 transition-colors">
+        <a href="jobs.html" class="flex flex-col items-center gap-1 text-slate-400">
             <i data-lucide="briefcase" class="w-6 h-6"></i>
             <span class="text-[10px] font-bold uppercase">Jobs</span>
         </a>
-
-        <a href="blogs.html"
-            class="flex flex-col items-center gap-1 text-slate-400 hover:text-sky-600 transition-colors">
+        <a href="blogs.html" class="flex flex-col items-center gap-1 text-slate-400">
             <i data-lucide="newspaper" class="w-6 h-6"></i>
             <span class="text-[10px] font-bold uppercase">Blogs</span>
         </a>
-
-        <a href="profile.html"
-            class="flex flex-col items-center gap-1 text-slate-400 hover:text-sky-600 transition-colors">
-            <div class="w-6 h-6 rounded-full bg-slate-200 flex items-center justify-center border border-slate-300">
-                <i data-lucide="user" class="w-4 h-4 text-slate-600"></i>
-            </div>
+        <a href="profile.html" class="flex flex-col items-center gap-1 text-slate-400">
+            <i data-lucide="user" class="w-6 h-6"></i>
             <span class="text-[10px] font-bold uppercase">Profile</span>
         </a>
-
     </nav>
 
     <script>
-        // Initialize Lucide icons
         lucide.createIcons();
     </script>
 </body>

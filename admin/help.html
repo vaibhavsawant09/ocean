@@ -16,124 +16,262 @@
             background-color: #f8fafc;
         }
 
+        .ship-gradient {
+            background: linear-gradient(to tr, #020617, #0369a1);
+        }
+
         .glass-effect {
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .sidebar-link:hover {
+            background: rgba(14, 165, 233, 0.1);
+            color: #0ea5e9;
+        }
+
+        .sidebar-link.active {
+            background: #0ea5e9;
+            color: white;
         }
 
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
     </style>
 </head>
 
-<body class="pb-10">
+<body class="bg-slate-50">
 
-    <header class="sticky top-0 z-50 glass-effect border-b border-slate-200 px-5 py-4">
-        <div class="flex items-center gap-4 mb-4">
-            <a href="profile.html" class="p-1 hover:bg-slate-100 rounded-full transition-colors">
-                <i data-lucide="chevron-left" class="w-6 h-6 text-slate-700"></i>
-            </a>
-            <h1 class="text-xl font-bold text-slate-800">Help Center</h1>
-        </div>
-        <div class="relative">
-            <i data-lucide="search" class="absolute left-4 top-3.5 w-4 h-4 text-slate-400"></i>
-            <input type="text" placeholder="Search for help topics..."
-                class="w-full bg-slate-100 border-none rounded-2xl py-3 pl-11 pr-4 text-sm focus:ring-2 focus:ring-sky-500 transition-all">
-        </div>
-    </header>
-
-    <main class="max-w-md mx-auto p-4 space-y-8">
-
-        <section>
-            <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest px-2 mb-4">Quick Contact</h3>
-            <div class="grid grid-cols-2 gap-3">
-                <button
-                    class="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-sm flex flex-col items-center gap-2 transition-transform active:scale-95">
-                    <div class="w-12 h-12 bg-sky-50 text-sky-600 rounded-2xl flex items-center justify-center">
-                        <i data-lucide="message-circle" class="w-6 h-6"></i>
-                    </div>
-                    <span class="text-xs font-bold text-slate-700">Live Chat</span>
-                </button>
-                <button
-                    class="bg-white p-5 rounded-[2rem] border border-slate-100 shadow-sm flex flex-col items-center gap-2 transition-transform active:scale-95">
-                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center">
-                        <i data-lucide="mail" class="w-6 h-6"></i>
-                    </div>
-                    <span class="text-xs font-bold text-slate-700">Email Support</span>
-                </button>
+    <aside class="hidden lg:flex fixed left-0 top-0 h-screen w-64 bg-white border-r border-slate-200 flex-col p-6 z-50">
+        <div class="flex items-center gap-3 mb-10">
+            <div class="w-10 h-10 ship-gradient rounded-xl flex items-center justify-center">
+                <i data-lucide="anchor" class="text-white w-6 h-6"></i>
             </div>
-        </section>
 
-        <section>
-            <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest px-2 mb-4">FAQ Categories</h3>
-            <div class="space-y-3">
-                <div class="bg-white rounded-[2rem] border border-slate-100 shadow-sm overflow-hidden">
-                    <button class="w-full flex items-center justify-between p-5 hover:bg-slate-50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="user-cog" class="w-5 h-5 text-slate-400"></i>
-                            <span class="text-sm font-semibold text-slate-700">Account & Access</span>
-                        </div>
-                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300"></i>
-                    </button>
-                    <button
-                        class="w-full flex items-center justify-between p-5 hover:bg-slate-50 border-t border-slate-50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="ship" class="w-5 h-5 text-slate-400"></i>
-                            <span class="text-sm font-semibold text-slate-700">Vessel Tracking</span>
-                        </div>
-                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300"></i>
-                    </button>
-                    <button
-                        class="w-full flex items-center justify-between p-5 hover:bg-slate-50 border-t border-slate-50 transition-colors">
-                        <div class="flex items-center gap-4">
-                            <i data-lucide="database" class="w-5 h-5 text-slate-400"></i>
-                            <span class="text-sm font-semibold text-slate-700">Data & Reporting</span>
-                        </div>
-                        <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300"></i>
-                    </button>
+            <img src="../assets/imgs/ocean/logo.png" alt="Maritima Logo" class="h-7 w-auto object-contain">
+        </div>
+        <nav class="space-y-2 flex-1">
+            <a href="index.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="layout-grid" class="w-5 h-5"></i> Dashboard
+            </a>
+            <a href="jobs.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="briefcase" class="w-5 h-5"></i> Job Postings
+            </a>
+            <a href="blogs.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="newspaper" class="w-5 h-5"></i> Insights
+            </a>
+            <a href="form-applications.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="newspaper" class="w-5 h-5"></i>Applications
+            </a>
+            <a href="profile.html"
+                class="sidebar-link active flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="user" class="w-5 h-5"></i> Admin Profile
+            </a>
+        </nav>
+        <div class="bg-slate-50 rounded-2xl p-4">
+            <p class="text-[10px] font-bold text-slate-400 uppercase mb-2">System Status</p>
+            <div class="flex items-center gap-2">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span class="text-xs font-bold text-slate-700">All Systems Online</span>
+            </div>
+        </div>
+    </aside>
+
+    <div class="lg:ml-64 min-h-screen pb-10">
+
+        <header class="sticky top-0 z-40 glass-effect border-b border-slate-200 px-6 py-4">
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row md:items-center gap-4">
+                <div class="flex items-center gap-4">
+                    <a href="profile.html" class="p-2 hover:bg-slate-100 rounded-full transition-colors lg:hidden">
+                        <i data-lucide="chevron-left" class="w-6 h-6 text-slate-700"></i>
+                    </a>
+                    <h1 class="text-xl font-bold text-slate-800 whitespace-nowrap">Help Center</h1>
+                </div>
+                <div class="relative flex-1">
+                    <i data-lucide="search" class="absolute left-4 top-3 w-5 h-5 text-slate-400"></i>
+                    <input type="text" placeholder="Search for documentation, vessel guides, or FAQs..."
+                        class="w-full bg-white border border-slate-200 rounded-2xl py-2.5 pl-12 pr-4 text-sm focus:ring-2 focus:ring-sky-500 outline-none transition-all shadow-sm">
                 </div>
             </div>
-        </section>
+        </header>
 
-        <section>
-            <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest px-2 mb-4">Popular Questions</h3>
-            <div class="space-y-3">
-                <details class="group bg-white rounded-3xl border border-slate-100 shadow-sm">
-                    <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
-                        <span class="text-sm font-bold text-slate-700">How to update vessel AIS data?</span>
-                        <i data-lucide="plus"
-                            class="w-4 h-4 text-slate-400 group-open:rotate-45 transition-transform"></i>
-                    </summary>
-                    <div class="px-5 pb-5 text-xs text-slate-500 leading-relaxed">
-                        Go to the Fleet Dashboard, select your vessel, and click on 'Edit AIS Parameters'. Changes
-                        usually reflect within 5-10 minutes.
-                    </div>
-                </details>
+        <main class="p-6 lg:p-10 max-w-5xl mx-auto">
 
-                <details class="group bg-white rounded-3xl border border-slate-100 shadow-sm">
-                    <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
-                        <span class="text-sm font-bold text-slate-700">Can I post jobs anonymously?</span>
-                        <i data-lucide="plus"
-                            class="w-4 h-4 text-slate-400 group-open:rotate-45 transition-transform"></i>
-                    </summary>
-                    <div class="px-5 pb-5 text-xs text-slate-500 leading-relaxed">
-                        Yes, in the Job Postings page, toggle 'Hide Company Name' before publishing. Only verified
-                        candidates will see the recruiter details.
+            <div class="grid lg:grid-cols-3 gap-8">
+
+                <div class="lg:col-span-2 space-y-8">
+
+                    <section>
+                        <div class="flex items-center justify-between mb-6 px-2">
+                            <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Popular Questions
+                            </h3>
+                            <button class="text-sky-600 text-xs font-bold hover:underline">View All</button>
+                        </div>
+
+                        <div class="space-y-4">
+                            <details
+                                class="group bg-white rounded-[1.5rem] border border-slate-100 shadow-sm transition-all hover:border-sky-100">
+                                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                    <span class="text-sm font-bold text-slate-700">How to update vessel AIS data?</span>
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-open:bg-sky-50 group-open:text-sky-600 transition-colors">
+                                        <i data-lucide="plus"
+                                            class="w-4 h-4 text-slate-400 group-open:rotate-45 transition-transform"></i>
+                                    </div>
+                                </summary>
+                                <div class="px-6 pb-6 text-sm text-slate-500 leading-relaxed">
+                                    Go to the Fleet Dashboard, select your vessel, and click on 'Edit AIS Parameters'.
+                                    Changes usually reflect within 5-10 minutes. For bulk updates, please contact the
+                                    Technical Department.
+                                </div>
+                            </details>
+
+                            <details
+                                class="group bg-white rounded-[1.5rem] border border-slate-100 shadow-sm transition-all hover:border-sky-100">
+                                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                    <span class="text-sm font-bold text-slate-700">Can I post jobs anonymously?</span>
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-open:bg-sky-50 group-open:text-sky-600 transition-colors">
+                                        <i data-lucide="plus"
+                                            class="w-4 h-4 text-slate-400 group-open:rotate-45 transition-transform"></i>
+                                    </div>
+                                </summary>
+                                <div class="px-6 pb-6 text-sm text-slate-500 leading-relaxed">
+                                    Yes, in the Job Postings page, toggle 'Hide Company Name' before publishing. Only
+                                    verified candidates who have passed the initial screen will see the specific
+                                    recruiter details.
+                                </div>
+                            </details>
+
+                            <details
+                                class="group bg-white rounded-[1.5rem] border border-slate-100 shadow-sm transition-all hover:border-sky-100">
+                                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                                    <span class="text-sm font-bold text-slate-700">Exporting Crew Manifests for
+                                        Customs</span>
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-open:bg-sky-50 group-open:text-sky-600 transition-colors">
+                                        <i data-lucide="plus"
+                                            class="w-4 h-4 text-slate-400 group-open:rotate-45 transition-transform"></i>
+                                    </div>
+                                </summary>
+                                <div class="px-6 pb-6 text-sm text-slate-500 leading-relaxed">
+                                    Navigate to Reports > Crewing > Manifest. You can export in PDF, Excel, or IMO
+                                    standardized formats. Ensure all seafarer passport data is validated before export.
+                                </div>
+                            </details>
+                        </div>
+                    </section>
+
+                    <div class="bg-slate-900 rounded-[2.5rem] p-10 text-white relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h4 class="text-2xl font-bold mb-2">Still Need Help?</h4>
+                            <p class="text-sm text-sky-200 opacity-80 max-w-md mb-6">Our specialized marine support team
+                                is available 24/7 for urgent vessel logistics and technical issues.</p>
+                            <div class="flex flex-wrap gap-3">
+                                <button
+                                    class="bg-white text-slate-900 px-8 py-3 rounded-2xl text-sm font-bold shadow-xl hover:bg-sky-50 transition-colors flex items-center gap-2">
+                                    <i data-lucide="phone" class="w-4 h-4"></i> Call Support
+                                </button>
+                                <button
+                                    class="bg-white/10 text-white border border-white/20 px-8 py-3 rounded-2xl text-sm font-bold hover:bg-white/20 transition-colors">
+                                    Open Ticket
+                                </button>
+                            </div>
+                        </div>
+                        <i data-lucide="help-circle"
+                            class="absolute -right-8 -bottom-8 w-48 h-48 text-white opacity-[0.03]"></i>
                     </div>
-                </details>
+                </div>
+
+                <div class="space-y-8">
+
+                    <section>
+                        <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest px-2 mb-4">Quick
+                            Contact</h3>
+                        <div class="grid grid-cols-2 lg:grid-cols-1 gap-4">
+                            <button
+                                class="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm flex lg:flex-row flex-col items-center gap-4 hover:bg-slate-50 transition-all">
+                                <div
+                                    class="w-12 h-12 bg-sky-50 text-sky-600 rounded-2xl flex items-center justify-center shrink-0">
+                                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-sm font-bold text-slate-700">Live Chat</p>
+                                    <p class="hidden lg:block text-[10px] text-slate-400 font-medium">Wait time: ~2 mins
+                                    </p>
+                                </div>
+                            </button>
+                            <button
+                                class="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm flex lg:flex-row flex-col items-center gap-4 hover:bg-slate-50 transition-all">
+                                <div
+                                    class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center shrink-0">
+                                    <i data-lucide="mail" class="w-6 h-6"></i>
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-sm font-bold text-slate-700">Email Us</p>
+                                    <p class="hidden lg:block text-[10px] text-slate-400 font-medium">Response: <
+                                            24h</p>
+                                </div>
+                            </button>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest px-2 mb-4">Browse
+                            Categories</h3>
+                        <div class="bg-white rounded-[2rem] border border-slate-100 shadow-sm overflow-hidden">
+                            <a href="#"
+                                class="flex items-center justify-between p-5 hover:bg-slate-50 transition-colors group">
+                                <div class="flex items-center gap-4">
+                                    <i data-lucide="user-cog"
+                                        class="w-5 h-5 text-slate-400 group-hover:text-sky-600 transition-colors"></i>
+                                    <span class="text-sm font-semibold text-slate-700">Account & Access</span>
+                                </div>
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300"></i>
+                            </a>
+                            <a href="#"
+                                class="flex items-center justify-between p-5 border-t border-slate-50 hover:bg-slate-50 transition-colors group">
+                                <div class="flex items-center gap-4">
+                                    <i data-lucide="ship"
+                                        class="w-5 h-5 text-slate-400 group-hover:text-sky-600 transition-colors"></i>
+                                    <span class="text-sm font-semibold text-slate-700">Vessel Tracking</span>
+                                </div>
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300"></i>
+                            </a>
+                            <a href="#"
+                                class="flex items-center justify-between p-5 border-t border-slate-50 hover:bg-slate-50 transition-colors group">
+                                <div class="flex items-center gap-4">
+                                    <i data-lucide="database"
+                                        class="w-5 h-5 text-slate-400 group-hover:text-sky-600 transition-colors"></i>
+                                    <span class="text-sm font-semibold text-slate-700">Data & Reporting</span>
+                                </div>
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300"></i>
+                            </a>
+                            <a href="#"
+                                class="flex items-center justify-between p-5 border-t border-slate-50 hover:bg-slate-50 transition-colors group">
+                                <div class="flex items-center gap-4">
+                                    <i data-lucide="shield-check"
+                                        class="w-5 h-5 text-slate-400 group-hover:text-sky-600 transition-colors"></i>
+                                    <span class="text-sm font-semibold text-slate-700">Safety Compliance</span>
+                                </div>
+                                <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300"></i>
+                            </a>
+                        </div>
+                    </section>
+
+                </div>
             </div>
-        </section>
-
-        <div class="bg-sky-900 rounded-[2.5rem] p-8 text-center text-white space-y-3 mx-2">
-            <h4 class="text-lg font-bold">Still Need Help?</h4>
-            <p class="text-xs text-sky-200 opacity-80">Our specialized marine support team is available 24/7 for urgent
-                vessel issues.</p>
-            <button class="mt-2 bg-white text-sky-900 px-6 py-3 rounded-2xl text-xs font-bold shadow-lg">Call Support
-                Now</button>
-        </div>
-
-    </main>
+        </main>
+    </div>
 
     <script>
         lucide.createIcons();

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceanic Start Shipping | Secure Admin Login</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/imgs/ocean/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .ship-gradient {
+            background: linear-gradient(135deg, #020617 0%, #0369a1 100%);
+        }
+
+        .floating-anchor {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen flex items-center justify-center">
+
+    <div class="w-full min-h-screen flex flex-col md:flex-row">
+
+        <div
+            class="hidden md:flex md:w-1/2 lg:w-3/5 ship-gradient p-12 flex-col justify-between relative overflow-hidden">
+            <div class="absolute top-[-10%] right-[-10%] w-96 h-96 bg-sky-400/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-5%] left-[-5%] w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+            <div class="relative z-10 flex items-center gap-3">
+                <div
+                    class="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl flex items-center justify-center p-2">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/anchor.png" alt="Anchor Icon"
+                        class="w-full h-full object-contain">
+                </div>
+                <span class="text-2xl font-black text-white tracking-tighter">Oceanic Star Shipping</span>
+            </div>
+
+            <div class="relative z-10">
+                <div class="floating-anchor mb-6 text-sky-300">
+                    <img src="../assets/imgs/ocean/favicon.png" alt="Ship Illustration" class="w-20 h-20 opacity-50">
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold text-white leading-tight">
+                    Welcome To The<br> <span class="text-sky-400">Oceanic Star Shipping</span>
+                </h2>
+                <p class="mt-4 text-sky-100/70 max-w-md text-lg leading-relaxed">
+                    The most advanced fleet management and seafarer recruitment portal for modern maritime operations.
+                </p>
+            </div>
+
+            <div class="relative z-10 text-sky-200/50 text-xs font-medium tracking-widest uppercase">
+                &copy; 2026 Oceanic Star Shipping Line
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/2 lg:w-2/5 flex items-center justify-center p-8 lg:p-16 bg-white">
+            <div class="w-full max-w-sm">
+
+                <div class="md:hidden flex items-center gap-3 mb-10">
+                    <div class="w-10 h-10 ship-gradient rounded-xl flex items-center justify-center p-2">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/anchor.png" alt="Anchor Icon"
+                            class="w-full h-full object-contain">
+                    </div>
+                    <span class="text-xl font-bold text-slate-800 tracking-tight">Oceanic Star Shipping</span>
+                </div>
+
+                <div class="mb-10">
+                    <h1 class="text-3xl font-black text-slate-800">Admin Login</h1>
+                    <p class="text-slate-400 mt-2 font-medium">Please enter your fleet credentials.</p>
+                </div>
+
+                <form action="index.html" class="space-y-6">
+                    <div>
+                        <label
+                            class="block text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-2 ml-1">Email
+                            Address</label>
+                        <div class="relative">
+                            <img src="https://img.icons8.com/material-outlined/24/94a3b8/mail.png"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5" alt="Email Icon">
+                            <input type="email" placeholder="admin@oceanicstar.com"
+                                class="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-4 focus:ring-sky-500/5 focus:border-sky-500 outline-none transition-all font-medium text-slate-700">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-2 ml-1">
+                            <label
+                                class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Password</label>
+                            <a href="#"
+                                class="text-[11px] font-bold text-sky-600 uppercase tracking-widest hover:underline">Forgot?</a>
+                        </div>
+                        <div class="relative">
+                            <img src="https://img.icons8.com/material-outlined/24/94a3b8/lock--v1.png"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5" alt="Lock Icon">
+                            <input type="password" placeholder="••••••••"
+                                class="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-100 rounded-2xl focus:ring-4 focus:ring-sky-500/5 focus:border-sky-500 outline-none transition-all font-medium text-slate-700">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3 px-1">
+                        <input type="checkbox" id="remember"
+                            class="w-4 h-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500">
+                        <label for="remember"
+                            class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Remember this
+                            station</label>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold text-sm hover:bg-slate-800 transition-all shadow-xl shadow-slate-200 flex items-center justify-center gap-2 group">
+
+                        Sign In to Dashboard
+
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+
+                    </button>
+                </form>
+
+                <div class="mt-12 pt-8 border-t border-slate-50">
+                    <p class="text-center text-xs text-slate-400 font-medium">
+                        Secure Port Terminal Entry. <br> Unauthorized access is strictly monitored.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

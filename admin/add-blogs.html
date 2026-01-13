@@ -16,6 +16,10 @@
             background-color: #f8fafc;
         }
 
+        .ship-gradient {
+            background: linear-gradient(to tr, #020617, #0369a1);
+        }
+
         .glass-effect {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.9);
@@ -27,141 +31,202 @@
             border-radius: 16px !important;
         }
 
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+        .sidebar-link:hover {
+            background: rgba(14, 165, 233, 0.1);
+            color: #0ea5e9;
+        }
+
+        .sidebar-link.active {
+            background: #0ea5e9;
+            color: white;
         }
     </style>
 </head>
 
-<body class="pb-10">
+<body class="bg-slate-50">
 
-    <header
-        class="sticky top-0 z-50 glass-effect border-b border-slate-100 px-5 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-4">
-            <a href="blogs.html" class="p-1 hover:bg-slate-100 rounded-full transition-colors">
-                <i data-lucide="x" class="w-6 h-6 text-slate-700"></i>
-            </a>
-            <h1 class="text-lg font-bold text-slate-800">New Insight</h1>
-        </div>
-        <button class="text-sky-600 font-bold text-sm">Save Draft</button>
-    </header>
-
-    <main class="max-w-md mx-auto p-6">
-        <form class="space-y-6">
-
-            <section class="space-y-4">
-                <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-1">Author Details</h3>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Poster Name</label>
-                        <input type="text" placeholder="e.g. Capt. Rajesh"
-                            class="w-full bg-white border border-slate-200 py-3 px-4 text-sm focus:ring-2 focus:ring-sky-500 outline-none shadow-sm">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Author Role</label>
-                        <select
-                            class="w-full bg-white border border-slate-200 py-3 px-4 text-sm focus:ring-2 focus:ring-sky-500 outline-none shadow-sm appearance-none">
-                            <option>Fleet Manager</option>
-                            <option>Technical Supt.</option>
-                            <option>HSE Officer</option>
-                            <option>Marine Engineer</option>
-                        </select>
-                    </div>
-                </div>
-            </section>
-
-            <section class="space-y-4">
-                <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-1">Publication Info</h3>
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Posting Date</label>
-                        <input type="date"
-                            class="w-full bg-white border border-slate-200 py-3 px-4 text-sm focus:ring-2 focus:ring-sky-500 outline-none shadow-sm">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Est. Read Time</label>
-                        <div class="relative">
-                            <input type="text" placeholder="5 min"
-                                class="w-full bg-white border border-slate-200 py-3 px-4 text-sm focus:ring-2 focus:ring-sky-500 outline-none shadow-sm">
-                            <i data-lucide="clock-3" class="absolute right-4 top-3.5 w-4 h-4 text-slate-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="space-y-4">
-                <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-1">Main Content</h3>
-
-                <div>
-                    <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Article Title</label>
-                    <input type="text" placeholder="Headline for your insight..."
-                        class="w-full bg-white border border-slate-200 py-3 px-4 text-sm font-semibold focus:ring-2 focus:ring-sky-500 outline-none shadow-sm">
-                </div>
-
-                <div>
-                    <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Short Summary (Preview
-                        Text)</label>
-                    <textarea rows="2" placeholder="Briefly describe what this article is about..."
-                        class="w-full bg-white border border-slate-200 py-3 px-4 text-sm focus:ring-2 focus:ring-sky-500 outline-none shadow-sm"></textarea>
-                </div>
-
-                <div class="relative">
-                    <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Cover Image</label>
-                    <div
-                        class="w-full h-40 bg-white border-2 border-dashed border-slate-200 rounded-[2rem] flex flex-col items-center justify-center gap-2 hover:bg-slate-50 transition-colors cursor-pointer relative overflow-hidden">
-                        <i data-lucide="camera" class="w-6 h-6 text-slate-300"></i>
-                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Add Banner
-                            Image</span>
-                        <input type="file" class="absolute inset-0 opacity-0 cursor-pointer">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Full Article Content</label>
-                    <div class="bg-white border border-slate-200 rounded-[2rem] overflow-hidden shadow-sm">
-                        <div class="flex gap-4 px-4 py-2 border-b border-slate-100 bg-slate-50">
-                            <i data-lucide="bold" class="w-4 h-4 text-slate-400"></i>
-                            <i data-lucide="italic" class="w-4 h-4 text-slate-400"></i>
-                            <i data-lucide="link" class="w-4 h-4 text-slate-400"></i>
-                            <i data-lucide="list" class="w-4 h-4 text-slate-400"></i>
-                        </div>
-                        <textarea rows="10" placeholder="Write your full insights here..."
-                            class="w-full p-4 text-sm outline-none resize-none"></textarea>
-                    </div>
-                </div>
-            </section>
-
-            <div class="space-y-3">
-                <div
-                    class="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                    <div class="flex items-center gap-3">
-                        <i data-lucide="megaphone" class="text-sky-600 w-5 h-5"></i>
-                        <span class="text-sm font-bold text-slate-700">Notify Followers</span>
-                    </div>
-                    <input type="checkbox" class="w-5 h-5 accent-sky-600" checked>
-                </div>
-
-                <div
-                    class="flex items-center justify-between p-4 bg-slate-900 rounded-2xl shadow-xl shadow-blue-900/20">
-                    <div class="flex items-center gap-3">
-                        <i data-lucide="star" class="text-amber-400 w-5 h-5"></i>
-                        <div>
-                            <p class="text-sm font-bold text-white">Featured Post</p>
-                            <p class="text-[10px] text-slate-400">Keep this at the top of the feed</p>
-                        </div>
-                    </div>
-                    <input type="checkbox" class="w-5 h-5 accent-amber-400">
-                </div>
+    <aside class="hidden lg:flex fixed left-0 top-0 h-screen w-64 bg-white border-r border-slate-200 flex-col p-6 z-50">
+        <div class="flex items-center gap-3 mb-10">
+            <div class="w-10 h-10 ship-gradient rounded-xl flex items-center justify-center">
+                <i data-lucide="anchor" class="text-white w-6 h-6"></i>
             </div>
 
-            <button type="submit"
-                class="w-full py-4 bg-gradient-to-tr from-[#020617] to-[#0369a1] text-white rounded-[2rem] font-bold text-sm shadow-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-8">
-                <i data-lucide="send" class="w-4 h-4"></i>
-                Publish Insight
-            </button>
+            <img src="../assets/imgs/ocean/logo.png" alt="Maritima Logo" class="h-7 w-auto object-contain">
+        </div>
+        <nav class="space-y-2 flex-1">
+            <a href="index.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="layout-grid" class="w-5 h-5"></i> Dashboard
+            </a>
+            <a href="jobs.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="briefcase" class="w-5 h-5"></i> Job Postings
+            </a>
+            <a href="blogs.html"
+                class="sidebar-link active text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="newspaper" class="w-5 h-5"></i> Insights
+            </a>
+            <a href="form-applications.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="newspaper" class="w-5 h-5"></i>Applications
+            </a>
+            <a href="profile.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="user" class="w-5 h-5"></i> Admin Profile
+            </a>
+        </nav>
+        <div class="bg-slate-50 rounded-2xl p-4">
+            <p class="text-[10px] font-bold text-slate-400 uppercase mb-2">System Status</p>
+            <div class="flex items-center gap-2">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span class="text-xs font-bold text-slate-700">All Systems Online</span>
+            </div>
+        </div>
+    </aside>
 
-        </form>
-    </main>
+    <div class="lg:ml-64 min-h-screen pb-10">
+
+        <header
+            class="sticky top-0 z-50 glass-effect border-b border-slate-100 px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="blogs.html" class="p-1 hover:bg-slate-100 rounded-full transition-colors">
+                    <i data-lucide="x" class="w-6 h-6 text-slate-700"></i>
+                </a>
+                <h1 class="text-lg font-bold text-slate-800">New Insight Post</h1>
+            </div>
+            <div class="flex items-center gap-3">
+                <button
+                    class="hidden sm:block text-slate-500 font-bold text-sm px-4 py-2 hover:bg-slate-100 rounded-xl">Save
+                    Draft</button>
+                <button type="submit" form="insightForm"
+                    class="bg-sky-600 text-white px-6 py-2 rounded-xl text-sm font-bold shadow-lg shadow-sky-200 hover:bg-sky-700">Publish</button>
+            </div>
+        </header>
+
+        <main class="p-6 lg:p-10 max-w-5xl mx-auto">
+            <form id="insightForm" class="grid lg:grid-cols-3 gap-8">
+
+                <div class="lg:col-span-2 space-y-8">
+                    <section class="space-y-4">
+                        <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-1">Main Content
+                        </h3>
+
+                        <div class="space-y-4 bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm">
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Article
+                                    Title</label>
+                                <input type="text" placeholder="Headline for your insight..."
+                                    class="w-full bg-slate-50 border border-slate-200 py-3 px-4 text-sm font-semibold focus:ring-2 focus:ring-sky-500 outline-none shadow-inner">
+                            </div>
+
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Short
+                                    Summary</label>
+                                <textarea rows="2" placeholder="Briefly describe what this article is about..."
+                                    class="w-full bg-slate-50 border border-slate-200 py-3 px-4 text-sm focus:ring-2 focus:ring-sky-500 outline-none shadow-inner"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Full Article
+                                    Content</label>
+                                <div class="bg-white border border-slate-200 rounded-[2rem] overflow-hidden shadow-sm">
+                                    <div class="flex gap-4 px-4 py-2 border-b border-slate-100 bg-slate-50">
+                                        <button type="button" class="hover:text-sky-600"><i data-lucide="bold"
+                                                class="w-4 h-4"></i></button>
+                                        <button type="button" class="hover:text-sky-600"><i data-lucide="italic"
+                                                class="w-4 h-4"></i></button>
+                                        <button type="button" class="hover:text-sky-600"><i data-lucide="link"
+                                                class="w-4 h-4"></i></button>
+                                        <button type="button" class="hover:text-sky-600"><i data-lucide="image"
+                                                class="w-4 h-4"></i></button>
+                                    </div>
+                                    <textarea rows="12" placeholder="Write your full insights here..."
+                                        class="w-full p-6 text-sm outline-none resize-none min-h-[300px]"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="space-y-8">
+
+                    <section class="space-y-4">
+                        <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-1">Visuals</h3>
+                        <div class="relative group">
+                            <div
+                                class="w-full h-48 bg-white border-2 border-dashed border-slate-200 rounded-[2.5rem] flex flex-col items-center justify-center gap-2 group-hover:bg-sky-50 group-hover:border-sky-300 transition-all cursor-pointer relative overflow-hidden">
+                                <i data-lucide="image-plus" class="w-8 h-8 text-slate-300 group-hover:text-sky-500"></i>
+                                <span
+                                    class="text-[10px] font-bold text-slate-400 uppercase group-hover:text-sky-600">Upload
+                                    Banner</span>
+                                <input type="file" class="absolute inset-0 opacity-0 cursor-pointer">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="space-y-4">
+                        <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-1">Details</h3>
+                        <div class="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-sm space-y-4">
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Author Name</label>
+                                <input type="text" placeholder="e.g. Capt. Rajesh"
+                                    class="w-full bg-slate-50 border border-slate-200 py-2.5 px-4 text-sm outline-none focus:ring-2 focus:ring-sky-500">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Author Role</label>
+                                <select
+                                    class="w-full bg-slate-50 border border-slate-200 py-2.5 px-4 text-sm outline-none focus:ring-2 focus:ring-sky-500">
+                                    <option>Fleet Manager</option>
+                                    <option>Technical Supt.</option>
+                                    <option>HSE Officer</option>
+                                </select>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Date</label>
+                                    <input type="date"
+                                        class="w-full bg-slate-50 border border-slate-200 py-2 px-3 text-[12px] outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold text-slate-500 mb-2 ml-1">Read
+                                        Time</label>
+                                    <input type="text" placeholder="5 min"
+                                        class="w-full bg-slate-50 border border-slate-200 py-2 px-3 text-[12px] outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="space-y-4">
+                        <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-1">Publishing
+                            Options</h3>
+                        <div class="space-y-3">
+                            <label
+                                class="flex items-center justify-between p-4 bg-white rounded-2xl border border-slate-100 cursor-pointer hover:bg-slate-50 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="megaphone" class="text-sky-600 w-5 h-5"></i>
+                                    <span class="text-xs font-bold text-slate-700">Notify Followers</span>
+                                </div>
+                                <input type="checkbox" class="w-5 h-5 accent-sky-600" checked>
+                            </label>
+
+                            <label
+                                class="flex items-center justify-between p-4 bg-slate-900 rounded-2xl cursor-pointer hover:bg-slate-800 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="star" class="text-amber-400 w-5 h-5"></i>
+                                    <div>
+                                        <p class="text-xs font-bold text-white">Featured Post</p>
+                                        <p class="text-[9px] text-slate-400">Pin to top of feed</p>
+                                    </div>
+                                </div>
+                                <input type="checkbox" class="w-5 h-5 accent-amber-400">
+                            </label>
+                        </div>
+                    </section>
+                </div>
+            </form>
+        </main>
+    </div>
 
     <script>
         lucide.createIcons();

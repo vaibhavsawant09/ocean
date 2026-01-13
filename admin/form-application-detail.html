@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceanic Star | Application Detail</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/imgs/ocean/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .ship-gradient {
+            background: linear-gradient(to tr, #020617, #0369a1);
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .data-label {
+            font-size: 10px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .data-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-top: 2px;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 2rem;
+            border: 1px border-slate-100;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+
+    <header
+        class="sticky top-0 z-50 glass-effect border-b border-slate-200 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <a href="form-applications.html" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                <i data-lucide="chevron-left" class="w-6 h-6 text-slate-700"></i>
+            </a>
+            <div>
+                <h1 class="text-lg font-bold text-slate-800">Application #APP-8829</h1>
+                <p class="text-[10px] text-slate-400 font-bold uppercase">Submitted: Oct 24, 2025</p>
+            </div>
+        </div>
+        <div class="flex gap-2">
+            <button
+                class="hidden md:flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-50">
+                <i data-lucide="download" class="w-4 h-4"></i> Export PDF
+            </button>
+            <button
+                class="px-6 py-2 bg-sky-600 text-white rounded-xl text-sm font-bold hover:bg-sky-700 shadow-lg shadow-sky-100">
+                Shortlist
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-4 lg:p-10">
+        <div class="grid lg:grid-cols-12 gap-8">
+
+            <aside class="lg:col-span-3">
+                <div class="sticky top-24 space-y-6">
+                    <div class="bg-white p-6 rounded-[2.5rem] border border-slate-100 shadow-sm text-center">
+                        <div
+                            class="w-24 h-24 bg-slate-100 rounded-3xl mx-auto mb-4 overflow-hidden ring-4 ring-slate-50">
+                            <img src="https://ui-avatars.com/api/?name=Alexander+Rivera&size=128&background=0ea5e9&color=fff"
+                                alt="Candidate">
+                        </div>
+                        <h2 class="text-lg font-bold text-slate-800">Alexander Rivera</h2>
+                        <p class="text-sm font-medium text-sky-600">Master Mariner</p>
+                        <div class="mt-4 pt-4 border-t border-slate-50 grid grid-cols-2 gap-2">
+                            <div>
+                                <p class="data-label">Availability</p>
+                                <p class="text-xs font-bold text-slate-700">Nov 15, 2025</p>
+                            </div>
+                            <div>
+                                <p class="data-label">Nationality</p>
+                                <p class="text-xs font-bold text-slate-700">Indian</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="hidden lg:block bg-white p-4 rounded-[2rem] border border-slate-100">
+                        <ul class="space-y-1">
+                            <li><a href="#personal"
+                                    class="flex items-center gap-3 p-3 rounded-xl bg-sky-50 text-sky-600 font-bold text-xs"><i
+                                        data-lucide="user" class="w-4 h-4"></i> Personal Details</a></li>
+                            <li><a href="#qualification"
+                                    class="flex items-center gap-3 p-3 rounded-xl text-slate-500 hover:bg-slate-50 font-bold text-xs"><i
+                                        data-lucide="graduation-cap" class="w-4 h-4"></i> Qualification</a></li>
+                            <li><a href="#identity"
+                                    class="flex items-center gap-3 p-3 rounded-xl text-slate-500 hover:bg-slate-50 font-bold text-xs"><i
+                                        data-lucide="id-card" class="w-4 h-4"></i> Identity & COVID</a></li>
+                            <li><a href="#certificates"
+                                    class="flex items-center gap-3 p-3 rounded-xl text-slate-500 hover:bg-slate-50 font-bold text-xs"><i
+                                        data-lucide="award" class="w-4 h-4"></i> Certs & Endorsements</a></li>
+                            <li><a href="#experience"
+                                    class="flex items-center gap-3 p-3 rounded-xl text-slate-500 hover:bg-slate-50 font-bold text-xs"><i
+                                        data-lucide="anchor" class="w-4 h-4"></i> Sea Experience</a></li>
+                            <li><a href="#declaration"
+                                    class="flex items-center gap-3 p-3 rounded-xl text-slate-500 hover:bg-slate-50 font-bold text-xs"><i
+                                        data-lucide="alert-circle" class="w-4 h-4"></i> Declaration</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="lg:col-span-9">
+
+                <section id="personal" class="section-card">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-10 h-10 bg-sky-50 text-sky-600 rounded-xl flex items-center justify-center"><i
+                                data-lucide="user" class="w-5 h-5"></i></div>
+                        <h3 class="text-lg font-bold text-slate-800">Personal Details</h3>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4">
+                        <div class="col-span-2">
+                            <p class="data-label">Full Name</p>
+                            <p class="data-value">Alexander Michael Rivera</p>
+                        </div>
+                        <div>
+                            <p class="data-label">Date of Birth</p>
+                            <p class="data-value">14 May 1988</p>
+                        </div>
+                        <div>
+                            <p class="data-label">Place of Birth</p>
+                            <p class="data-value">Goa, India</p>
+                        </div>
+
+                        <div>
+                            <p class="data-label">InDoS No.</p>
+                            <p class="data-value">12BN4567</p>
+                        </div>
+                        <div>
+                            <p class="data-label">Phone No</p>
+                            <p class="data-value">+91 98765 43210</p>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="data-label">Email</p>
+                            <p class="data-value">a.rivera@example.com</p>
+                        </div>
+
+                        <div class="col-span-2">
+                            <p class="data-label">Present Address</p>
+                            <p class="text-sm text-slate-600 leading-relaxed">402, Ocean Vista, Marine Drive, Mumbai, MH
+                                - 400001</p>
+                        </div>
+                        <div class="col-span-2">
+                            <p class="data-label">Permanent Address</p>
+                            <p class="text-sm text-slate-600 leading-relaxed">House No. 88, Heritage Lane, Panjim, Goa -
+                                403001</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 p-6 bg-slate-50 rounded-3xl grid grid-cols-3 md:grid-cols-6 gap-6">
+                        <div>
+                            <p class="data-label">Weight</p>
+                            <p class="data-value">78 Kg</p>
+                        </div>
+                        <div>
+                            <p class="data-label">Height</p>
+                            <p class="data-value">182 Cm</p>
+                        </div>
+                        <div>
+                            <p class="data-label">Coverall</p>
+                            <p class="data-value">Large (42)</p>
+                        </div>
+                        <div>
+                            <p class="data-label">Eye Color</p>
+                            <p class="data-value">Brown</p>
+                        </div>
+                        <div>
+                            <p class="data-label">Shoe Size</p>
+                            <p class="data-value">9 (UK)</p>
+                        </div>
+                        <div>
+                            <p class="data-label">Shirt Size</p>
+                            <p class="data-value">40</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="qualification" class="section-card">
+                    <div class="grid md:grid-cols-2 gap-10">
+                        <div>
+                            <h3 class="text-base font-bold text-slate-800 mb-6 flex items-center gap-2"><i
+                                    data-lucide="graduation-cap" class="w-5 h-5 text-amber-500"></i> Basic Qualification
+                            </h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="data-label">Qualification</p>
+                                    <p class="data-value">B.Sc. Nautical Science</p>
+                                </div>
+                                <div>
+                                    <p class="data-label">School / College</p>
+                                    <p class="data-value">T.S. Chanakya</p>
+                                </div>
+                                <div class="flex gap-10">
+                                    <div>
+                                        <p class="data-label">Year</p>
+                                        <p class="data-value">2010</p>
+                                    </div>
+                                    <div>
+                                        <p class="data-label">Percentage</p>
+                                        <p class="data-value">82%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-slate-800 mb-6 flex items-center gap-2"><i
+                                    data-lucide="ship" class="w-5 h-5 text-blue-500"></i> Pre-Sea Training</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="data-label">Course Name</p>
+                                    <p class="data-value">DNS Course</p>
+                                </div>
+                                <div>
+                                    <p class="data-label">Institute</p>
+                                    <p class="data-value">Anglo Eastern Maritime Academy</p>
+                                </div>
+                                <div class="flex gap-10">
+                                    <div>
+                                        <p class="data-label">From - To</p>
+                                        <p class="data-value">2011 - 2012</p>
+                                    </div>
+                                    <div>
+                                        <p class="data-label">Grade</p>
+                                        <p class="data-value">A+</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="identity" class="section-card">
+                    <h3 class="text-base font-bold text-slate-800 mb-6">Identity Documents</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="border-b border-slate-50">
+                                    <th class="pb-4 data-label">Document</th>
+                                    <th class="pb-4 data-label">Number</th>
+                                    <th class="pb-4 data-label">Expiry</th>
+                                    <th class="pb-4 data-label">Place</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm font-semibold text-slate-700">
+                                <tr class="border-b border-slate-50">
+                                    <td class="py-4">Passport</td>
+                                    <td class="py-4">Z9988772</td>
+                                    <td class="py-4 text-emerald-600">12/2030</td>
+                                    <td class="py-4">Mumbai</td>
+                                </tr>
+                                <tr class="border-b border-slate-50">
+                                    <td class="py-4">CDC (Indian)</td>
+                                    <td class="py-4">MUM-112233</td>
+                                    <td class="py-4 text-emerald-600">08/2029</td>
+                                    <td class="py-4">Mumbai</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-10 p-6 bg-emerald-50 rounded-3xl">
+                        <h4 class="text-xs font-bold text-emerald-700 uppercase tracking-widest mb-4">Covid Vaccination
+                            Status</h4>
+                        <div class="grid grid-cols-3 gap-6">
+                            <div>
+                                <p class="data-label text-emerald-600/60">Vaccine</p>
+                                <p class="text-sm font-bold text-emerald-800">Covishield</p>
+                            </div>
+                            <div>
+                                <p class="data-label text-emerald-600/60">1st Dose</p>
+                                <p class="text-sm font-bold text-emerald-800">10 Jan 2021</p>
+                            </div>
+                            <div>
+                                <p class="data-label text-emerald-600/60">2nd Dose</p>
+                                <p class="text-sm font-bold text-emerald-800">15 Apr 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="experience" class="section-card">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="text-lg font-bold text-slate-800">Sea Sailing Experience</h3>
+                        <span class="px-4 py-1 bg-sky-100 text-sky-700 rounded-full text-[10px] font-bold">Total Exp:
+                            12.5 Years</span>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="p-6 bg-slate-50 rounded-[2rem] border border-slate-100 relative">
+                            <div class="grid md:grid-cols-4 gap-6">
+                                <div class="col-span-2">
+                                    <p class="data-label">Vessel Name & Type</p>
+                                    <p class="data-value">MT OCEAN STAR <span class="text-slate-400 font-normal">| Crude
+                                            Oil Tanker</span></p>
+                                </div>
+                                <div>
+                                    <p class="data-label">Rank</p>
+                                    <p class="data-value">Master</p>
+                                </div>
+                                <div>
+                                    <p class="data-label">GRT</p>
+                                    <p class="data-value">150,000</p>
+                                </div>
+                                <div class="col-span-2">
+                                    <p class="data-label">Company Name</p>
+                                    <p class="data-value">Maersk Tankers</p>
+                                </div>
+                                <div>
+                                    <p class="data-label">From - To</p>
+                                    <p class="data-value">Jan 2023 - Oct 2023</p>
+                                </div>
+                                <div>
+                                    <p class="data-label">Engine</p>
+                                    <p class="data-value">MAN B&W</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-slate-200/50">
+                                <p class="data-label">Description</p>
+                                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Commanded VLCC in international
+                                    waters, managed crew of 24, ensured zero LTI and environmental compliance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="declaration" class="section-card border-l-4 border-l-amber-400">
+                    <h3 class="text-lg font-bold text-slate-800 mb-6">Personal Declaration</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-4 bg-slate-50 rounded-2xl">
+                            <p class="text-sm font-medium text-slate-700">Have you ever signed off from a ship due to
+                                medical reasons?</p>
+                            <span
+                                class="px-4 py-1 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-400 uppercase">No</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-slate-50 rounded-2xl">
+                            <p class="text-sm font-medium text-slate-700">Were you refused VISA / Entry to any country
+                                in the last SEVEN years?</p>
+                            <span
+                                class="px-4 py-1 bg-red-50 text-red-600 border border-red-100 rounded-lg text-xs font-bold uppercase">Yes</span>
+                        </div>
+                        <div class="p-4 bg-red-50/30 rounded-2xl border border-red-100">
+                            <p class="data-label text-red-700">Details provided by candidate:</p>
+                            <p class="text-sm text-slate-600 mt-2 italic">"US Visa denied in 2019 due to administrative
+                                processing error; re-applied and granted in 2021."</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

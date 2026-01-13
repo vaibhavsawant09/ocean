@@ -16,147 +16,235 @@
             background-color: #f8fafc;
         }
 
+        .ship-gradient {
+            background: linear-gradient(to tr, #020617, #0369a1);
+        }
+
         .glass-effect {
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .sidebar-link:hover {
+            background: rgba(14, 165, 233, 0.1);
+            color: #0ea5e9;
+        }
+
+        .sidebar-link.active {
+            background: #0ea5e9;
+            color: white;
         }
 
         .status-pill {
-            padding: 2px 8px;
-            border-radius: 6px;
+            padding: 4px 10px;
+            border-radius: 8px;
             font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
         }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
     </style>
 </head>
 
-<body class="pb-10">
+<body class="bg-slate-50">
+    <aside class="hidden lg:flex fixed left-0 top-0 h-screen w-64 bg-white border-r border-slate-200 flex-col p-6 z-50">
+        <div class="flex items-center gap-3 mb-10">
+            <div class="w-10 h-10 ship-gradient rounded-xl flex items-center justify-center">
+                <i data-lucide="anchor" class="text-white w-6 h-6"></i>
+            </div>
 
-    <header
-        class="sticky top-0 z-50 glass-effect border-b border-slate-200 px-5 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-4">
-            <a href="jobs.html" class="p-1 hover:bg-slate-100 rounded-full transition-colors">
-                <i data-lucide="chevron-left" class="w-6 h-6 text-slate-700"></i>
+            <img src="../assets/imgs/ocean/logo.png" alt="Maritima Logo" class="h-7 w-auto object-contain">
+        </div>
+        <nav class="space-y-2 flex-1">
+            <a href="index.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="layout-grid" class="w-5 h-5"></i> Dashboard
             </a>
-            <h1 class="text-lg font-bold text-slate-800">Applications</h1>
-        </div>
-        <button class="bg-slate-100 p-2 rounded-xl text-slate-600">
-            <i data-lucide="share-2" class="w-5 h-5"></i>
-        </button>
-    </header>
-
-    <main class="max-w-md mx-auto p-4">
-
-        <div class="bg-slate-900 rounded-[2rem] p-6 mb-8 text-white shadow-xl">
-            <div class="flex justify-between items-start mb-4">
-                <div>
-                    <span class="text-sky-400 text-[10px] font-bold uppercase tracking-wider">Active Vacancy</span>
-                    <h2 class="text-2xl font-bold mt-1">Master Mariner</h2>
-                    <p class="text-slate-400 text-sm">Oil Tanker • Posted 3 days ago</p>
-                </div>
-                <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md">
-                    <i data-lucide="anchor" class="text-white w-6 h-6"></i>
-                </div>
-            </div>
-            <div class="flex gap-6 border-t border-white/10 pt-4 mt-4">
-                <div>
-                    <p class="text-[10px] text-slate-400 uppercase font-bold">Total</p>
-                    <p class="text-xl font-bold">48</p>
-                </div>
-                <div>
-                    <p class="text-[10px] text-slate-400 uppercase font-bold">New</p>
-                    <p class="text-xl font-bold text-sky-400">12</p>
-                </div>
-                <div>
-                    <p class="text-[10px] text-slate-400 uppercase font-bold">Shortlisted</p>
-                    <p class="text-xl font-bold text-emerald-400">5</p>
-                </div>
+            <a href="jobs.html"
+                class="sidebar-link active text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="briefcase" class="w-5 h-5"></i> Job Postings
+            </a>
+            <a href="blogs.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="newspaper" class="w-5 h-5"></i> Insights
+            </a>
+            <a href="form-applications.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="newspaper" class="w-5 h-5"></i>Applications
+            </a>
+            <a href="profile.html"
+                class="sidebar-link text-slate-500 flex items-center gap-3 p-3 rounded-xl transition-all font-semibold">
+                <i data-lucide="user" class="w-5 h-5"></i> Admin Profile
+            </a>
+        </nav>
+        <div class="bg-slate-50 rounded-2xl p-4">
+            <p class="text-[10px] font-bold text-slate-400 uppercase mb-2">System Status</p>
+            <div class="flex items-center gap-2">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span class="text-xs font-bold text-slate-700">All Systems Online</span>
             </div>
         </div>
+    </aside>
 
-        <div class="flex gap-2 mb-6 overflow-x-auto no-scrollbar pb-2">
-            <button
-                class="bg-slate-200 text-slate-700 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap">All</button>
-            <button
-                class="bg-white text-slate-400 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap border border-slate-100">Shortlisted</button>
-            <button
-                class="bg-white text-slate-400 px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap border border-slate-100">Reviewed</button>
-        </div>
+    <div class="lg:ml-64 min-h-screen pb-10">
 
-        <div class="space-y-4">
+        <header
+            class="sticky top-0 z-40 glass-effect border-b border-slate-200 px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="jobs.html" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                    <i data-lucide="chevron-left" class="w-6 h-6 text-slate-700"></i>
+                </a>
+                <div>
+                    <h1 class="text-lg font-bold text-slate-800">Master Mariner Applications</h1>
+                    <p class="hidden sm:block text-[10px] text-slate-400 font-bold uppercase tracking-widest">Job ID:
+                        #MM-9920</p>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <button
+                    class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-slate-600 text-sm font-bold flex items-center gap-2 hover:bg-slate-50">
+                    <i data-lucide="download" class="w-4 h-4"></i> Export CSV
+                </button>
+            </div>
+        </header>
 
-            <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm transition-all active:scale-[0.98]">
-                <div class="flex items-center justify-between mb-3">
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-2xl bg-slate-100 overflow-hidden border border-slate-200">
-                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Avatar">
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-slate-900 text-sm">Capt. Alexander Rivera</h3>
-                            <p class="text-[11px] text-slate-500">Exp: 12 Years • Last: Maersk</p>
-                        </div>
+        <main class="p-6 lg:p-10 max-w-6xl mx-auto">
+
+            <div
+                class="bg-slate-900 rounded-[2.5rem] p-8 mb-8 text-white shadow-2xl shadow-blue-900/20 relative overflow-hidden">
+                <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <span
+                            class="bg-sky-500/20 text-sky-300 text-[10px] font-bold uppercase tracking-tighter px-3 py-1 rounded-full border border-sky-500/30">Active
+                            Vacancy</span>
+                        <h2 class="text-3xl font-black mt-3">Master Mariner</h2>
+                        <p class="text-slate-400 mt-1 flex items-center gap-2">
+                            <i data-lucide="ship" class="w-4 h-4"></i> Oil Tanker Fleet • Posted 3 days ago
+                        </p>
                     </div>
-                    <span class="status-pill bg-sky-100 text-sky-600">New</span>
-                </div>
-                <div class="flex gap-2 mt-4">
-                    <button
-                        class="flex-1 bg-slate-900 text-white py-2.5 rounded-xl text-[11px] font-bold flex items-center justify-center gap-2">
-                        <i data-lucide="file-text" class="w-3.5 h-3.5"></i> View CV
-                    </button>
-                    <button
-                        class="w-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center border border-emerald-100">
-                        <i data-lucide="check" class="w-5 h-5"></i>
-                    </button>
-                    <button
-                        class="w-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center border border-red-100">
-                        <i data-lucide="x" class="w-5 h-5"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm">
-                <div class="flex items-center justify-between mb-3">
-                    <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-2xl bg-slate-100 overflow-hidden border border-slate-200">
-                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=John" alt="Avatar">
+                    <div class="flex gap-4 md:justify-end">
+                        <div class="bg-white/5 border border-white/10 p-4 rounded-3xl min-w-[100px] text-center">
+                            <p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Total</p>
+                            <p class="text-2xl font-black">48</p>
                         </div>
-                        <div>
-                            <h3 class="font-bold text-slate-900 text-sm">Johnathan Doe</h3>
-                            <p class="text-[11px] text-slate-500">Exp: 8 Years • Last: MSC</p>
+                        <div class="bg-sky-500/10 border border-sky-500/20 p-4 rounded-3xl min-w-[100px] text-center">
+                            <p class="text-[10px] text-sky-400 uppercase font-bold mb-1">New</p>
+                            <p class="text-2xl font-black text-sky-400">12</p>
                         </div>
-                    </div>
-                    <span class="status-pill bg-emerald-100 text-emerald-600">Shortlisted</span>
-                </div>
-                <div class="flex gap-2 mt-4">
-                    <button
-                        class="flex-1 bg-slate-900 text-white py-2.5 rounded-xl text-[11px] font-bold flex items-center justify-center gap-2">
-                        <i data-lucide="file-text" class="w-3.5 h-3.5"></i> View CV
-                    </button>
-                    <button class="bg-sky-50 text-sky-600 px-4 rounded-xl text-[11px] font-bold border border-sky-100">
-                        Schedule Interview
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-3xl p-4 border border-slate-100 shadow-sm opacity-70">
-                <div class="flex items-center justify-between mb-3">
-                    <div class="flex items-center gap-3">
                         <div
-                            class="w-12 h-12 rounded-2xl bg-slate-100 overflow-hidden border border-slate-200 grayscale">
-                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah" alt="Avatar">
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-slate-900 text-sm">Sarah Jenkins</h3>
-                            <p class="text-[11px] text-slate-500">Exp: 15 Years • Last: TORM</p>
+                            class="bg-emerald-500/10 border border-emerald-500/20 p-4 rounded-3xl min-w-[100px] text-center">
+                            <p class="text-[10px] text-emerald-400 uppercase font-bold mb-1">Shortlisted</p>
+                            <p class="text-2xl font-black text-emerald-400">05</p>
                         </div>
                     </div>
-                    <span class="status-pill bg-slate-100 text-slate-500">Reviewed</span>
+                </div>
+                <i data-lucide="anchor"
+                    class="absolute -right-10 -bottom-10 w-64 h-64 text-white opacity-[0.03] rotate-12"></i>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+                <div class="flex gap-2 overflow-x-auto no-scrollbar">
+                    <button
+                        class="bg-slate-900 text-white px-6 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap shadow-lg shadow-slate-200">All
+                        Candidates</button>
+                    <button
+                        class="bg-white text-slate-500 px-6 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap border border-slate-100 hover:bg-slate-50 transition-colors">Shortlisted</button>
+                    <button
+                        class="bg-white text-slate-500 px-6 py-2.5 rounded-2xl text-xs font-bold whitespace-nowrap border border-slate-100 hover:bg-slate-50 transition-colors">Reviewed</button>
+                </div>
+                <div class="relative w-full md:w-64">
+                    <input type="text" placeholder="Search by name..."
+                        class="w-full bg-white border border-slate-200 py-2.5 px-4 pl-10 rounded-2xl text-xs outline-none focus:ring-2 focus:ring-sky-500">
+                    <i data-lucide="search" class="absolute left-3.5 top-2.5 w-4 h-4 text-slate-400"></i>
                 </div>
             </div>
 
-        </div>
-    </main>
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+
+                <div
+                    class="bg-white rounded-[2rem] p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all group">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-slate-100 overflow-hidden border-2 border-slate-50 shadow-inner">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Avatar"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base">Capt. Alexander Rivera</h3>
+                                <p class="text-xs text-slate-500 font-medium">12 Years Exp • Last: Maersk Line</p>
+                                <div class="flex items-center gap-2 mt-1">
+                                    <i data-lucide="map-pin" class="w-3 h-3 text-slate-400"></i>
+                                    <span class="text-[10px] text-slate-400 font-bold uppercase">Mumbai, India</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="status-pill bg-sky-100 text-sky-600">New Application</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button
+                            class="flex-1 bg-slate-900 text-white py-3 rounded-2xl text-xs font-bold flex items-center justify-center gap-2 hover:bg-slate-800 transition-all">
+                            <i data-lucide="file-text" class="w-4 h-4"></i> View CV Details
+                        </button>
+                        <button
+                            class="w-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center border border-emerald-100 hover:bg-emerald-600 hover:text-white transition-all"
+                            title="Shortlist">
+                            <i data-lucide="check" class="w-6 h-6"></i>
+                        </button>
+                        <button
+                            class="w-14 bg-red-50 text-red-600 rounded-2xl flex items-center justify-center border border-red-100 hover:bg-red-600 hover:text-white transition-all"
+                            title="Reject">
+                            <i data-lucide="x" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white rounded-[2rem] p-6 border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-slate-100 overflow-hidden border-2 border-slate-50 shadow-inner">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=John" alt="Avatar"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base">Johnathan Doe</h3>
+                                <p class="text-xs text-slate-500 font-medium">8 Years Exp • Last: MSC Shipping</p>
+                                <div class="flex items-center gap-2 mt-1">
+                                    <i data-lucide="map-pin" class="w-3 h-3 text-slate-400"></i>
+                                    <span class="text-[10px] text-slate-400 font-bold uppercase">London, UK</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="status-pill bg-emerald-100 text-emerald-600">Shortlisted</span>
+                    </div>
+                    <div class="flex gap-3">
+                        <button
+                            class="flex-1 bg-slate-900 text-white py-3 rounded-2xl text-xs font-bold flex items-center justify-center gap-2 hover:bg-slate-800 transition-all">
+                            <i data-lucide="file-text" class="w-4 h-4"></i> View CV Details
+                        </button>
+                        <button
+                            class="bg-sky-50 text-sky-600 px-6 rounded-2xl text-xs font-bold border border-sky-100 hover:bg-sky-600 hover:text-white transition-all">
+                            Schedule Interview
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <nav
+        class="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-8 py-4 flex justify-around items-center z-50">
+        <a href="index.html" class="text-slate-400"><i data-lucide="layout-grid" class="w-6 h-6"></i></a>
+        <a href="jobs.html" class="text-sky-600"><i data-lucide="briefcase" class="w-6 h-6"></i></a>
+        <a href="blogs.html" class="text-slate-400"><i data-lucide="newspaper" class="w-6 h-6"></i></a>
+        <a href="profile.html" class="text-slate-400"><i data-lucide="user" class="w-6 h-6"></i></a>
+    </nav>
 
     <script>
         lucide.createIcons();
