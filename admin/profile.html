@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maritima | Admin Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .ship-gradient {
+            background: linear-gradient(to tr, #020617, #0369a1);
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="pb-24">
+
+    <header
+        class="sticky top-0 z-50 glass-effect border-b border-slate-200 px-5 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <a href="index.html" class="p-1 hover:bg-slate-100 rounded-full transition-colors">
+                <i data-lucide="chevron-left" class="w-6 h-6 text-slate-700"></i>
+            </a>
+            <h1 class="text-xl font-bold text-slate-800">Profile</h1>
+        </div>
+        <button class="text-sky-600 font-bold text-sm">Edit</button>
+    </header>
+
+    <main class="max-w-md mx-auto p-4">
+
+        <section class="flex flex-col items-center py-6">
+            <div class="relative">
+                <div class="w-28 h-28 rounded-3xl ship-gradient p-1 shadow-xl shadow-blue-900/20">
+                    <div class="w-full h-full bg-white rounded-[22px] flex items-center justify-center overflow-hidden">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Admin"
+                            class="w-full h-full">
+                    </div>
+                </div>
+                <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-emerald-500 border-4 border-white rounded-full flex items-center justify-center"
+                    title="Online">
+                    <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                </div>
+            </div>
+
+            <h2 class="mt-4 text-2xl font-bold text-slate-900">Capt. James Wilson</h2>
+            <p class="text-sm text-slate-500 font-medium">Senior Fleet Operations Manager</p>
+
+            <div class="mt-2 flex gap-2">
+                <span
+                    class="px-3 py-1 bg-sky-100 text-sky-700 text-[10px] font-bold rounded-full uppercase tracking-wider">Super
+                    Admin</span>
+                <span
+                    class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-full uppercase tracking-wider">ID:
+                    8829-MR</span>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-3 gap-3 mb-8">
+            <div class="bg-white p-3 rounded-2xl border border-slate-100 text-center shadow-sm">
+                <p class="text-[10px] font-bold text-slate-400 uppercase">Jobs</p>
+                <p class="text-lg font-bold text-slate-800">14</p>
+            </div>
+            <div class="bg-white p-3 rounded-2xl border border-slate-100 text-center shadow-sm">
+                <p class="text-[10px] font-bold text-slate-400 uppercase">Blogs</p>
+                <p class="text-lg font-bold text-slate-800">32</p>
+            </div>
+            <div class="bg-white p-3 rounded-2xl border border-slate-100 text-center shadow-sm">
+                <p class="text-[10px] font-bold text-slate-400 uppercase">Ships</p>
+                <p class="text-lg font-bold text-slate-800">08</p>
+            </div>
+        </section>
+
+        <div class="space-y-6">
+
+            <div>
+                <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest px-2 mb-3">Management</h3>
+                <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+                    <a href="#"
+                        class="flex items-center justify-between p-4 hover:bg-slate-50 border-b border-slate-50">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-sky-50 rounded-xl flex items-center justify-center text-sky-600">
+                                <i data-lucide="bell" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700">Notifications</span>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-300"></i>
+                    </a>
+                    <a href="#"
+                        class="flex items-center justify-between p-4 hover:bg-slate-50 border-b border-slate-50">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700">Security & Privacy</span>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-300"></i>
+                    </a>
+                    <a href="#" class="flex items-center justify-between p-4 hover:bg-slate-50">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600">
+                                <i data-lucide="settings" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700">System Preferences</span>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-300"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest px-2 mb-3">Support</h3>
+                <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+                    <a href="#"
+                        class="flex items-center justify-between p-4 hover:bg-slate-50 border-b border-slate-50">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 bg-slate-50 rounded-xl flex items-center justify-center text-slate-600">
+                                <i data-lucide="help-circle" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700">Help Center</span>
+                        </div>
+                        <i data-lucide="chevron-right" class="w-5 h-5 text-slate-300"></i>
+                    </a>
+                    <button class="w-full flex items-center justify-between p-4 hover:bg-red-50 text-red-600">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center">
+                                <i data-lucide="log-out" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-sm font-bold">Log Out</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="text-center text-[10px] text-slate-400 mt-8 mb-4 font-medium uppercase tracking-tighter">Maritima
+            Fleet Admin v2.4.0</p>
+    </main>
+
+    <nav
+        class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-200 px-6 py-4 flex justify-between items-center z-50">
+        <a href="index.html" class="flex flex-col items-center gap-1 text-slate-400">
+            <i data-lucide="layout-grid" class="w-6 h-6"></i>
+            <span class="text-[10px] font-bold uppercase">Dash</span>
+        </a>
+        <a href="jobs.html" class="flex flex-col items-center gap-1 text-slate-400">
+            <i data-lucide="briefcase" class="w-6 h-6"></i>
+            <span class="text-[10px] font-bold uppercase">Jobs</span>
+        </a>
+        <a href="blogs.html" class="flex flex-col items-center gap-1 text-slate-400">
+            <i data-lucide="newspaper" class="w-6 h-6"></i>
+            <span class="text-[10px] font-bold uppercase">Blogs</span>
+        </a>
+        <a href="profile.html" class="flex flex-col items-center gap-1 text-sky-600">
+            <div class="w-6 h-6 rounded-full ship-gradient flex items-center justify-center border border-sky-200">
+                <i data-lucide="user" class="w-4 h-4 text-white"></i>
+            </div>
+            <span class="text-[10px] font-bold uppercase">Profile</span>
+        </a>
+    </nav>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
