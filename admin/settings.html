@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceanic Star Shipping | System Preferences</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/imgs/ocean/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .theme-card-active {
+            border-color: #0ea5e9;
+            background-color: #f0f9ff;
+        }
+    </style>
+</head>
+
+<body class="pb-10">
+
+    <header
+        class="sticky top-0 z-50 glass-effect border-b border-slate-200 px-5 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <a href="profile.html" class="p-1 hover:bg-slate-100 rounded-full transition-colors">
+                <i data-lucide="chevron-left" class="w-6 h-6 text-slate-700"></i>
+            </a>
+            <h1 class="text-lg font-bold text-slate-800">Preferences</h1>
+        </div>
+        <button class="text-sky-600 font-bold text-sm">Reset</button>
+    </header>
+
+    <main class="max-w-md mx-auto p-4 space-y-8">
+
+        <section>
+            <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest px-2 mb-4">Appearance</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <button
+                    class="flex flex-col gap-3 p-4 bg-white border-2 border-slate-100 rounded-3xl shadow-sm text-left theme-card-active">
+                    <div
+                        class="w-full h-20 bg-slate-50 rounded-xl border border-slate-100 overflow-hidden p-2 space-y-1">
+                        <div class="h-2 w-full bg-slate-200 rounded"></div>
+                        <div class="h-2 w-2/3 bg-slate-200 rounded"></div>
+                        <div class="flex gap-1 mt-2">
+                            <div class="h-4 w-4 bg-sky-500 rounded-full"></div>
+                            <div class="h-4 w-4 bg-slate-300 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full">
+                        <span class="text-xs font-bold text-slate-700">Light Mode</span>
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-600"></i>
+                    </div>
+                </button>
+
+                <button
+                    class="flex flex-col gap-3 p-4 bg-white border-2 border-slate-100 rounded-3xl shadow-sm text-left hover:border-slate-200 transition-all">
+                    <div class="w-full h-20 bg-slate-900 rounded-xl overflow-hidden p-2 space-y-1">
+                        <div class="h-2 w-full bg-slate-700 rounded"></div>
+                        <div class="h-2 w-2/3 bg-slate-700 rounded"></div>
+                        <div class="flex gap-1 mt-2">
+                            <div class="h-4 w-4 bg-sky-600 rounded-full"></div>
+                            <div class="h-4 w-4 bg-slate-600 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center w-full">
+                        <span class="text-xs font-bold text-slate-500">Dark Mode</span>
+                        <div class="w-4 h-4 rounded-full border border-slate-200"></div>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest px-2 mb-3">Regional & Units</h3>
+            <div class="bg-white rounded-[2rem] border border-slate-100 shadow-sm overflow-hidden">
+                <div class="flex items-center justify-between p-5 border-b border-slate-50">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600">
+                            <i data-lucide="languages" class="w-5 h-5"></i>
+                        </div>
+                        <p class="text-sm font-bold text-slate-700">App Language</p>
+                    </div>
+                    <select class="bg-transparent text-sm font-bold text-sky-600 outline-none">
+                        <option>English (US)</option>
+                        <option>Greek</option>
+                        <option>Norwegian</option>
+                        <option>Chinese</option>
+                    </select>
+                </div>
+
+                <div class="flex items-center justify-between p-5 border-b border-slate-50">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-sky-50 rounded-xl flex items-center justify-center text-sky-600">
+                            <i data-lucide="wind" class="w-5 h-5"></i>
+                        </div>
+                        <p class="text-sm font-bold text-slate-700">Speed Units</p>
+                    </div>
+                    <div class="bg-slate-100 p-1 rounded-xl flex">
+                        <button
+                            class="px-3 py-1 bg-white rounded-lg shadow-sm text-[10px] font-bold text-slate-700">KTS</button>
+                        <button class="px-3 py-1 text-[10px] font-bold text-slate-400">KM/H</button>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-5">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600">
+                            <i data-lucide="thermometer" class="w-5 h-5"></i>
+                        </div>
+                        <p class="text-sm font-bold text-slate-700">Temperature</p>
+                    </div>
+                    <div class="bg-slate-100 p-1 rounded-xl flex">
+                        <button
+                            class="px-3 py-1 bg-white rounded-lg shadow-sm text-[10px] font-bold text-slate-700">°C</button>
+                        <button class="px-3 py-1 text-[10px] font-bold text-slate-400">°F</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest px-2 mb-3">Optimization</h3>
+            <div class="bg-white rounded-[2rem] border border-slate-100 shadow-sm overflow-hidden">
+                <div class="flex items-center justify-between p-5">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
+                            <i data-lucide="wifi" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-slate-700">Offline Mode</p>
+                            <p class="text-[10px] text-slate-400">Cache ship data for sea travel</p>
+                        </div>
+                    </div>
+                    <input type="checkbox" class="w-5 h-5 accent-emerald-500" checked>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
